@@ -1,9 +1,6 @@
 import ArticleCard from "./ArticleCard"
 
-export default function Articles(props){
-    const {allArticles} = props
-
-    console.log(allArticles, "in articles")
+export default function Articles({allArticles}){
 
     return (
         <div>

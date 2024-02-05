@@ -1,5 +1,4 @@
-export default function ArticleCard(props) {
-  const { article } = props;
+export default function ArticleCard({article}) {
 
   return (
     <>
