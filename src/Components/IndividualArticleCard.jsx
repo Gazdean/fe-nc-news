@@ -1,4 +1,14 @@
-export default function IndividualArticleCard({ article }) {
+export default function IndividualArticleCard({ article, setShowComments, showComments }) {
+ 
+  function handleShowComments() {
+    setShowComments(true)
+  }
+
+  function handleHideComments() {
+    setShowComments(false)
+  }
+
+  
   return (
     <section>
       <h2>{article.title}</h2>
@@ -16,7 +26,7 @@ export default function IndividualArticleCard({ article }) {
         <li>Votes: {article.votes}</li>
         <li>Comments: {article.comment_count}</li>
       </ul>
-      <button>Show comments</button>
+      {showComments ? <button onClick={handleHideComments}>hide comments</button> : <button onClick={handleShowComments}>show comments</button> }
     </section>
   );
 }
