@@ -22,8 +22,9 @@ export default function IndividualArticle({ article_id , setShowComments, showCo
       {isLoading ? (
         <p>...your article is loading</p>
       ) : (
-        <IndividualArticleCard article={article} setShowComments={setShowComments} showComments={showComments}/>
+        <IndividualArticleCard article={article} setShowComments={setShowComments} showComments={showComments} article_id={article_id}/>
       )}
     </>
   );
+  
 }

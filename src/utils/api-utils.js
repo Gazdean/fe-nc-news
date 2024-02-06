@@ -27,3 +27,12 @@ export function fetchCommentsByArticleId(articleId) {
     return response.data.comments
   })
 }
+export function updateArticleByArticleId(articleId, body) {
+  return ncNewsApi
+  .patch(`/articles/${articleId}`, body)
+
+  .then((response) => {
+    return response.data.article
+  })
+  
+}

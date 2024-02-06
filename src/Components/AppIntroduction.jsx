@@ -5,4 +5,5 @@ export default function AppIntroduction() {
       <p>Get all the news in one place</p>
     </section>
   );
+  
 }

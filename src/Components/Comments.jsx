@@ -32,4 +32,5 @@ export default function Comments({article_id, showComments}) {
     </div> : null}
         </>
     )
+    
 }

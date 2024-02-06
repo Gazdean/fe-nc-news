@@ -10,6 +10,7 @@ ul {
 }
 
 #nav-bar-container {
+  color: black;
   font-size: 0.8rem;
   padding-left: 0;
   margin-right: 5rem;
@@ -24,6 +25,10 @@ ul {
   position: fixed;
 }
 
+.nav-detail {
+  color: black;
+}
+
 #header {
   padding-top: 3rem;
   display: flex;
@@ -33,14 +38,13 @@ ul {
 #NC {
   color: #fa2a55;
   padding-right: 1rem;
+  text-shadow: 1px 4px 4px  black;
 }
 #News {
   color: black;
+  text-shadow: 1px 3px 3px red;
 }
-h1 {
-  color: red;
-  text-shadow: 2px 6px 6px rgba(46, 91, 173, 0.6);
-}
+
 .article_container {
   display: flex;
   flex-direction: column;
@@ -95,4 +99,5 @@ h1 {
   #article_title {
     font-size: 2rem;
   }
+  
 }
