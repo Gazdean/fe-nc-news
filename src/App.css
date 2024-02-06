@@ -5,17 +5,17 @@
   text-align: center;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
 #nav-bar-container {
   font-size: 0.8rem;
   padding-left: 0;
- margin-right: 5rem;
+  margin-right: 5rem;
   padding-top: 0;
-  margin-top:0;
-  width:100%;
+  margin-top: 0;
+  width: 100%;
   height: 4rem;
   display: flex;
   flex-direction: row;
@@ -55,7 +55,7 @@ h1 {
 }
 
 #individual-article-image {
-  width: 20rem
+  width: 20rem;
 }
 
 .individual-article-details {
@@ -64,12 +64,18 @@ h1 {
   justify-content: space-around;
 }
 
+.comment_container {
+  font-size: 0.8rem;
+  margin: 2rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
 .article_image {
   width: 7rem;
   height: 8rem;
   padding-right: 4rem;
 }
-
 
 .article_details {
   display: flex;

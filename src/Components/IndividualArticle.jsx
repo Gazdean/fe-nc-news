@@ -1,10 +1,8 @@
 import IndividualArticleCard from "./IndividualArticleCard";
 import { fetchArticleById } from "../utils/api-utils";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 
-export default function IndividualArticle() {
-  const { article_id } = useParams();
+export default function IndividualArticle({ article_id , setShowComments, showComments}) {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +22,7 @@ export default function IndividualArticle() {
       {isLoading ? (
         <p>...your article is loading</p>
       ) : (
-        <IndividualArticleCard article={article} />
+        <IndividualArticleCard article={article} setShowComments={setShowComments} showComments={showComments}/>
       )}
     </>
   );

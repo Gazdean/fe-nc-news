@@ -19,3 +19,11 @@ export function fetchArticleById(articleId) {
     return response.data.article
   })
 }
+
+export function fetchCommentsByArticleId(articleId) {
+  return ncNewsApi
+  .get(`/articles/${articleId}/comments`)
+  .then((response) => {
+    return response.data.comments
+  })
+}

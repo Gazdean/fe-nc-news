@@ -4,8 +4,8 @@ import Footer from "./Components/Footer";
 import AppIntroduction from "./Components/AppIntroduction";
 import Articles from "./Components/Articles";
 import NavBar from "./Components/NavBar";
-import IndividualArticle from "./Components/IndividualArticle";
 import { Routes, Route } from "react-router";
+import IndividualArticleManager from "./Components/IndividualArticleManager";
 
 function App() {
   
@@ -16,11 +16,8 @@ function App() {
       <AppIntroduction />
       <Routes>
         <Route path="/" element={<Articles/>} /> 
-        <Route path="/article/:article_id" element={<IndividualArticle />} />
+        <Route path="/article/:article_id" element={<IndividualArticleManager />} />
       </Routes>
-      <Footer />
-     <Header/>
-     <AppIntroduction/>
      <Footer/>
     </>
   )
