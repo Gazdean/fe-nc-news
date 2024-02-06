@@ -17,7 +17,7 @@ export default function IndividualArticle() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, []) ;
 
   return (
     <>
@@ -26,6 +26,7 @@ export default function IndividualArticle() {
       ) : (
         <IndividualArticleCard article={article} />
       )}
+      
     </>
   );
 }

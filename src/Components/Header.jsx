@@ -5,4 +5,5 @@ export default function Header() {
       <h1 id="News">News</h1>
     </div>
   );
+  
 }

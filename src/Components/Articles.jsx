@@ -25,6 +25,8 @@ export default function Articles(){
                     return <ArticleCard key={article.article_id} article={article} />
                 })}
             </ul>}
+
         </div>
+        
     )
 }
