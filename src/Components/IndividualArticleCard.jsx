@@ -16,7 +16,7 @@ export default function IndividualArticleCard({ article }) {
         <li>Votes: {article.votes}</li>
         <li>Comments: {article.comment_count}</li>
       </ul>
-      <button>Comment</button>
+      <button>Show comments</button>
     </section>
   );
 }
