@@ -12,12 +12,12 @@ export default function IndividualArticle() {
     fetchArticleById(article_id)
       .then((article) => {
         setArticle(article);
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []) ;
+  }, []);
 
   return (
     <>
@@ -26,7 +26,6 @@ export default function IndividualArticle() {
       ) : (
         <IndividualArticleCard article={article} />
       )}
-      
     </>
   );
 }

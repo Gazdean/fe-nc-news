@@ -18,6 +18,5 @@ export default function IndividualArticleCard({ article }) {
       </ul>
       <button>Show comments</button>
     </section>
-    
   );
 }

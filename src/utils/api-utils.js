@@ -18,5 +18,4 @@ export function fetchArticleById(articleId) {
   .then((response) => {
     return response.data.article
   })
-  
 }

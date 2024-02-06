@@ -10,6 +10,5 @@ export default function NavBar() {
         <Link to="/profile"><img src="" alt="user avatar" /></Link>
       </ul>
     </div>
-    
   );
 }
