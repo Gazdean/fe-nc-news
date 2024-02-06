@@ -1,5 +1,4 @@
 export default function CommentsCard(comment) {
-    console.log(comment)
   return (
     <div className="comment_container">
       <li className="comment_details">{comment.comment.body}</li>
