@@ -7,9 +7,9 @@ export default function NavBar() {
         <Link to="/"><li className="nav-detail">NC News</li></Link>
         <Link to="/topics"><li className="nav-detail">Topics</li></Link>
         <Link to="/profile"><li className="nav-detail">userName</li></Link>
-        
+        <Link to="/profile"><img src="" alt="user avatar" /></Link>
       </ul>
-      <Link to="/profile"><img src="" alt="user avatar" /></Link>
+      
     </div>
   );
   

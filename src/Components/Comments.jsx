@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchCommentsByArticleId } from "../utils/api-utils";
 import CommentsCard from "./CommentsCard";
+import CommentForm from "./commentForm";
 
 export default function Comments({article_id, showComments}) {
     const [comments, setComments] = useState([])
@@ -24,9 +25,11 @@ export default function Comments({article_id, showComments}) {
         <p>...comments are loading</p>
       ) : (
         <ul>
+          <CommentForm />
           {comments.map((comment) => {
             return <CommentsCard key={comment.comment_id} comment={comment} />;
           })}
+          
         </ul>
       )}
     </div> : null}

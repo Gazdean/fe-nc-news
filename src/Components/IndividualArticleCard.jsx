@@ -74,7 +74,7 @@ export default function IndividualArticleCard({
         <li>Votes: {existingVotes}</li>
         <li>Comments: {article.comment_count}</li>
       </ul>
-      {voted ? <button onClick={handleDeleteVote}> Remove Vote</button> : <button onClick={handleAddVote}>Vote</button>}
+      {voted ? <button className="button" onClick={handleDeleteVote}> Remove Vote</button> : <button onClick={handleAddVote}>Vote</button>}
       {error? <p>vote was unsuccessful</p> : null}
       {showComments ? (<button onClick={handleHideComments}>hide comments</button>)
       : (<button onClick={handleShowComments}>show comments</button>)}
