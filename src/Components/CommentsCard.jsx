@@ -6,4 +6,5 @@ export default function CommentsCard(comment) {
       <p className="comment_details">Votes: {comment.comment.votes}</p>
     </li>
   );
+  
 }

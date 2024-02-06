@@ -34,4 +34,5 @@ export function updateArticleByArticleId(articleId, body) {
   .then((response) => {
     return response.data.article
   })
+  
 }

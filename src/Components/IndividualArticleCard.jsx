@@ -80,4 +80,5 @@ export default function IndividualArticleCard({
       : (<button onClick={handleShowComments}>show comments</button>)}
     </section>
   );
+  
 }

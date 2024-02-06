@@ -26,4 +26,5 @@ export default function IndividualArticle({ article_id , setShowComments, showCo
       )}
     </>
   );
+  
 }

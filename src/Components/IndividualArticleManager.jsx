@@ -13,4 +13,5 @@ export default function IndividualArticleManager() {
       <Comments article_id={article_id} showComments={showComments} />
     </>
   );
+  
 }
