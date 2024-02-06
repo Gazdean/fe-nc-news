@@ -1,19 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import AppIntroduction from './Components/AppIntroduction'
-import Manager from './Components/Manager'
-
-
+import Articles from './Components/Articles';
 
 function App() {
-  
+
   return (
     <>
      <Header/>
      <AppIntroduction/>
-     <Manager/>
+     <Articles />
      <Footer/>
     </>
   )
