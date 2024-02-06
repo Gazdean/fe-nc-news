@@ -1,5 +1,4 @@
 export default function IndividualArticleCard({ article }) {
-  console.log(article);
   return (
     <section>
       <h2>{article.title}</h2>
