@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
+
 export default function NavBar() {
-    return (
-        <>
-        <ul id="nav-bar-container">
-            <li>NC News</li>
-            <li>Topics</li>
-            <li>Articles</li>
-            <li>userName</li>
-            <img src="" alt="user avatar" />
-        </ul>
-        </>
-    )
+  return (
+    <div >
+      <ul id="nav-bar-container">
+        <Link to="/"><li>NC News</li></Link>
+        <Link to="/topics"><li>Topics</li></Link>
+        <Link to="/profile"><li>userName</li></Link>
+        <Link to="/profile"><img src="" alt="user avatar" /></Link>
+      </ul>
+    </div>
+  );
 }

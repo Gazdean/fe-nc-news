@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 import AppIntroduction from "./Components/AppIntroduction";
 import Articles from "./Components/Articles";
 import NavBar from "./Components/NavBar";
+import IndividualArticle from "./Components/IndividualArticle";
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
       <NavBar />
       <Header />
       <AppIntroduction />
-      <Articles />
+      <Routes>
+        <Route path="/" element={<Articles/>} /> 
+        <Route path="/article/:article_id" element={<IndividualArticle />} />
+      </Routes>
       <Footer />
     </>
   );
