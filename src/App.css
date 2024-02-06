@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+ul{
+  list-style: none;
+}
+
+#nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 #header {
   display: flex;
   flex-direction: row;
@@ -33,7 +43,6 @@ h1 {
 .article_card {
   display: flex;
   flex-direction: column;
-  list-style: none;
   border-bottom: 2px solid grey;
   padding-bottom: 20px;
 }
