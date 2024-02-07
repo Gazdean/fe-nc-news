@@ -21,6 +21,7 @@ export default function CommentForm({ article_id, comments, setCommentCount, com
       .then((response) => {
         setPostingComment(false)
         setCommentCount(commentCount + 1 )
+        setNewComment("")
         
       })
       .catch((err) => {
@@ -36,6 +37,7 @@ export default function CommentForm({ article_id, comments, setCommentCount, com
           onChange={handleCommentInput}
           id="comment-input"
           type="text"
+          value={newComment}
           required
         />
         {postingComment ? <p>..posting comment</p> : <button className="button">submit comment</button>}
