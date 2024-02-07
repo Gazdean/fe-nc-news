@@ -3,7 +3,7 @@ import { fetchCommentsByArticleId } from "../utils/api-utils";
 import CommentsCard from "./CommentsCard";
 import CommentForm from "./commentForm";
 
-export default function Comments({article_id, showComments}) {
+export default function Comments({article_id, showComments, setCommentCount, commentCount}) {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState([]);
     
@@ -16,7 +16,7 @@ export default function Comments({article_id, showComments}) {
           .catch((error) => {
             console.log(error);
           });
-      }, []);
+      }, [comments]);
     return (
         <>
         {showComments ? 
@@ -25,7 +25,7 @@ export default function Comments({article_id, showComments}) {
         <p>...comments are loading</p>
       ) : (
         <ul>
-          <CommentForm article_id={article_id} />
+          <CommentForm article_id={article_id} comments={comments} setCommentCount={setCommentCount} commentCount={commentCount}/>
           {comments.map((comment) => {
             return <CommentsCard key={comment.comment_id} comment={comment} />;
           })}

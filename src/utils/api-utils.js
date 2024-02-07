@@ -45,3 +45,11 @@ export function createCommentByArticleId(articleId, body) {
     return response.data.comment
   })
 }
+
+export function fetchUsers() {
+  return ncNewsApi
+  .get(`/users`)
+  .then((response) => {
+    return response.data.users
+  })
+}

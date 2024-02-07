@@ -5,7 +5,7 @@ import { fetchAllArticles } from "../utils/api-utils";
 
 export default function Articles() {
   const [allArticles, setAllArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchAllArticles()
@@ -31,5 +31,4 @@ export default function Articles() {
       )}
     </div>
   );
-  
 }

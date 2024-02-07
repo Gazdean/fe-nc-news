@@ -5,10 +5,11 @@ export default function IndividualArticleCard({
   article,
   setShowComments,
   showComments,
-  article_id
+  article_id,
+  commentCount
 }) {
   const [existingVotes, setExistingVotes] = useState(article.votes);
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(false)
   const [voted, setVoted] = useState(false)
 
   function handleShowComments() {
@@ -22,38 +23,35 @@ export default function IndividualArticleCard({
   function handleAddVote() {
     const updatedVotes = existingVotes + 1;
     setExistingVotes(updatedVotes);
-
+    setVoted(true)
     updateArticleByArticleId(article_id, {inc_votes: 1})
     .then((response)=> {
-      setExistingVotes(response.votes)
-      setVoted(true)
-      setError(null)
+      console.log(response.votes)
+      setError(false)
     })
     .catch((err) => {
       console.log(err);
       if (err) {
-        setError(err)
+        setVoted(false)
+        setError(true)
       }
-      setExistingVotes(article.votes)
     });
   }
 
   function handleDeleteVote() {
     const updatedVotes = existingVotes - 1;
     setExistingVotes(updatedVotes);
-
+    setVoted(false)
     updateArticleByArticleId(article_id, {inc_votes: -1})
     .then((response)=> {
-      setExistingVotes(response.votes)
-      setVoted(false)
-      setError(null)
+      console.log(response.votes)
+      setError(false)
     })
     .catch((err) => {
       console.log(err);
       if (err) {
-        setError(err)
+        setError(true)
       }
-      setExistingVotes(article.votes)
     });
   }
 
@@ -72,10 +70,12 @@ export default function IndividualArticleCard({
       <p>{article.body}</p>
       <ul className="individual-article-details">
         <li>Votes: {existingVotes}</li>
-        <li>Comments: {article.comment_count}</li>
+        <li>Comments: {commentCount}</li>
       </ul>
-      {voted ? <button className="button" onClick={handleDeleteVote}> Remove Vote</button> : <button onClick={handleAddVote}>Vote</button>}
-      {error? <p>vote was unsuccessful</p> : null}
+      {error? <p>vote was unsuccessful</p> 
+      : voted ? <button onClick={handleDeleteVote} disabled={!voted}>Remove Vote</button>
+      : <button onClick={handleAddVote} disabled={voted}>Vote</button>}
+      
       {showComments ? (<button onClick={handleHideComments}>hide comments</button>)
       : (<button onClick={handleShowComments}>show comments</button>)}
     </section>
