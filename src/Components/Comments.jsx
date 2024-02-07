@@ -25,7 +25,7 @@ export default function Comments({article_id, showComments}) {
         <p>...comments are loading</p>
       ) : (
         <ul>
-          <CommentForm />
+          <CommentForm article_id={article_id} />
           {comments.map((comment) => {
             return <CommentsCard key={comment.comment_id} comment={comment} />;
           })}
