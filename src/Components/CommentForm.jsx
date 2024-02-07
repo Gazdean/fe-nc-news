@@ -28,8 +28,6 @@ export default function CommentForm({ article_id, comments, setCommentCount, com
       });
   }
 
-  console.log(signedIn)
-
   return (
     <>
      { signedIn.length === 0 ? null : <form onSubmit={handleCommentSubmit}>
