@@ -27,6 +27,7 @@ export function fetchCommentsByArticleId(articleId) {
     return response.data.comments
   })
 }
+
 export function updateArticleByArticleId(articleId, body) {
   return ncNewsApi
   .patch(`/articles/${articleId}`, body)
@@ -35,4 +36,20 @@ export function updateArticleByArticleId(articleId, body) {
     return response.data.article
   })
   
+}
+
+export function createCommentByArticleId(articleId, body) {
+  return ncNewsApi
+  .post(`/articles/${articleId}/comments`, body)
+  .then((response) => {
+    return response.data.comment
+  })
+}
+
+export function fetchUsers() {
+  return ncNewsApi
+  .get(`/users`)
+  .then((response) => {
+    return response.data.users
+  })
 }

@@ -5,7 +5,8 @@ export default function IndividualArticleCard({
   article,
   setShowComments,
   showComments,
-  article_id
+  article_id,
+  commentCount
 }) {
   const [existingVotes, setExistingVotes] = useState(article.votes);
   const [error, setError] = useState(false)
@@ -69,7 +70,7 @@ export default function IndividualArticleCard({
       <p>{article.body}</p>
       <ul className="individual-article-details">
         <li>Votes: {existingVotes}</li>
-        <li>Comments: {article.comment_count}</li>
+        <li>Comments: {commentCount}</li>
       </ul>
       {error? <p>vote was unsuccessful</p> 
       : voted ? <button onClick={handleDeleteVote} disabled={!voted}>Remove Vote</button>

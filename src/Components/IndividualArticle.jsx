@@ -2,7 +2,7 @@ import IndividualArticleCard from "./IndividualArticleCard";
 import { fetchArticleById } from "../utils/api-utils";
 import { useEffect, useState } from "react";
 
-export default function IndividualArticle({ article_id , setShowComments, showComments}) {
+export default function IndividualArticle({ article_id , setShowComments, showComments, setCommentCount, commentCount}) {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,18 +11,21 @@ export default function IndividualArticle({ article_id , setShowComments, showCo
       .then((article) => {
         setArticle(article);
         setIsLoading(false);
+        setCommentCount(article.comment_count)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
+  
+
   return (
     <>
       {isLoading ? (
         <p>...your article is loading</p>
       ) : (
-        <IndividualArticleCard article={article} setShowComments={setShowComments} showComments={showComments} article_id={article_id}/>
+        <IndividualArticleCard article={article} setShowComments={setShowComments} showComments={showComments} article_id={article_id} commentCount={commentCount}/>
       )}
     </>
   );
