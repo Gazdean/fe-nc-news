@@ -1,6 +1,7 @@
 import IndividualArticleCard from "./IndividualArticleCard";
 import { fetchArticleById } from "../utils/api-utils";
 import { useEffect, useState } from "react";
+import ShareButtons from "./ShareButtons";
 
 export default function IndividualArticle({ article_id , setShowComments, showComments, setCommentCount, commentCount}) {
   const [article, setArticle] = useState([]);
@@ -22,6 +23,7 @@ export default function IndividualArticle({ article_id , setShowComments, showCo
 
   return (
     <>
+      <ShareButtons/>
       {isLoading ? (
         <p>...your article is loading</p>
       ) : (

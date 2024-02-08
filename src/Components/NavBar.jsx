@@ -8,7 +8,6 @@ export default function NavBar() {
   return (
     <nav id="nav-bar-container">
         <Link to="/"><p className="nav-detail">NC News</p></Link>
-        <Link to="/topics"><p className="nav-detail">Topics</p></Link>
         {signedIn.length === 0 ? <Link to="/signin"><p className="nav-detail">Sign in</p></Link> : <img id="nav_bar_img"src={signedIn.avatar_url} alt={`${signedIn.username}'s avatar`}/>}
     </nav>
   );

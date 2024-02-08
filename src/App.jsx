@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Articles/>} /> 
         <Route path="/signin" element={<SignIn/>} /> 
-        <Route path="/article/:article_id" element={<IndividualArticleManager />} />
+        <Route path="/article/:article_id" element={<IndividualArticleManager />} />  
       </Routes>
      <Footer/>
     </>

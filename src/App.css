@@ -51,6 +51,12 @@ ul {
   text-shadow: 1px 3px 3px red;
 }
 
+#socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .article_container {
   padding-left: 2rem;
   padding-right: 2rem;
