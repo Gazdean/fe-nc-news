@@ -14,6 +14,7 @@ export default function CommentForm({
   const [newComment, setNewComment] = useState("");
   const { signedIn } = useContext(SignedInContext);
   const [postingComment, setPostingComment] = useState(false);
+  const [error, setError] = useState("")
 
   function handleCommentInput(event) {
     setNewComment(event.target.value);
@@ -26,18 +27,20 @@ export default function CommentForm({
     const commentBody = { username: signedIn.username, body: newComment };
     createCommentByArticleId(article_id, commentBody)
       .then((response) => {
+        error ? "" : null
         setPostingComment(false);
         setCommentCount(commentCount + 1);
         setNewComment("");
         setPostedComment(true);
       })
       .catch((err) => {
+        setError(err.code)
         console.log(err);
       });
   }
   return (
     <>
-      {signedIn.length === 0 ? null : (
+      {error === "ERR_NETWORK" ? <h2>503 Service Unavailable</h2>: signedIn.length === 0 ? null : (
         <form onSubmit={handleCommentSubmit}>
           <label htmlFor="comment-input">Write a comment</label>
           <textarea

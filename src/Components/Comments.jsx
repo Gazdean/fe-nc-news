@@ -14,6 +14,7 @@ export default function Comments({article_id, showComments, setCommentCount, com
             setIsLoading(false);
           })
           .catch((error) => {
+            setError(error.code)
             console.log(error);
           });
       }, [postedComment]);
