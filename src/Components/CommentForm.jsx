@@ -4,10 +4,16 @@ import { SignedInContext } from "../contexts/SignedinContext";
 
 import { createCommentByArticleId } from "../utils/api-utils";
 
-export default function CommentForm({ article_id, setCommentCount, commentCount, setPostedComment}) {
+export default function CommentForm({
+  article_id,
+  setCommentCount,
+  commentCount,
+  setPostedComment,
+  postedComment
+}) {
   const [newComment, setNewComment] = useState("");
   const { signedIn } = useContext(SignedInContext);
-  const [postingComment, setPostingComment] = useState(false)
+  const [postingComment, setPostingComment] = useState(false);
 
   function handleCommentInput(event) {
     setNewComment(event.target.value);
@@ -15,34 +21,39 @@ export default function CommentForm({ article_id, setCommentCount, commentCount,
 
   function handleCommentSubmit(event) {
     event.preventDefault();
-   setPostingComment(true)
+    setPostingComment(true);
+    postedComment ? setPostedComment(false) : null
     const commentBody = { username: signedIn.username, body: newComment };
     createCommentByArticleId(article_id, commentBody)
       .then((response) => {
-        setPostingComment(false)
-        setCommentCount(commentCount + 1 )
-        setNewComment("")
-        setPostedComment(true)
-        setPostedComment(false)
+        setPostingComment(false);
+        setCommentCount(commentCount + 1);
+        setNewComment("");
+        setPostedComment(true);
       })
       .catch((err) => {
         console.log(err);
       });
   }
-
   return (
     <>
-     { signedIn.length === 0 ? null : <form onSubmit={handleCommentSubmit}>
-        <label htmlFor="comment-input">Write a comment</label>
-        <textarea
-          onChange={handleCommentInput}
-          id="comment-input"
-          type="text"
-          value={newComment}
-          required
-        />
-        {postingComment ? <p>..posting comment</p> : <button className="button">submit comment</button>}
-      </form>}
+      {signedIn.length === 0 ? null : (
+        <form onSubmit={handleCommentSubmit}>
+          <label htmlFor="comment-input">Write a comment</label>
+          <textarea
+            onChange={handleCommentInput}
+            id="comment-input"
+            type="text"
+            value={newComment}
+            required
+          />
+          {postingComment ? (
+            <p>..posting comment</p>
+          ) : (
+            <button className="button">submit comment</button>
+          )}
+        </form>
+      )}
     </>
   );
 }
