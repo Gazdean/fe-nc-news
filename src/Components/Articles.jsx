@@ -4,13 +4,14 @@ import ArticleCard from "./ArticleCard";
 import { fetchAllArticles, fetchTopics } from "../utils/api-utils";
 import TopicOptions from "./TopicOptions";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import ShareButtons from "./ShareButtons";
 
 export default function Articles() {
   const [allArticles, setAllArticles] = useState([]);
   const [topics, setTopics] = useState([]);
   const [selectedTopicRoute, setSelectedTopicRoute] = useState("/");
   const [isLoading, setIsLoading] = useState(true);
-  const [articlesToRender, setArticlesToRender] = useState()
+  const [articlesToRender, setArticlesToRender] = useState();
 
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,9 +19,7 @@ export default function Articles() {
   const topicSearchParam = searchParams.get("topic");
 
   useEffect(() => {
-
     fetchAllArticles(topicSearchParam)
-   
       .then((receivedArticles) => {
         setAllArticles(receivedArticles);
         setIsLoading(false);
@@ -41,6 +40,7 @@ export default function Articles() {
   }, []);
 
   function handleSelectTopic(event) {
+    console.log(event.target.value, "llll")
     setSelectedTopicRoute(event.target.value);
   }
 
@@ -50,13 +50,14 @@ export default function Articles() {
 
   return (
     <div>
+      <ShareButtons />
       {isLoading ? (
         <p>...your articles are loading</p>
       ) : (
         <>
+         
           <label htmlFor="topics">Pick a topic</label>
           <select
-            value={selectedTopicRoute}
             onChange={handleSelectTopic}
             id="topics"
           >
@@ -71,7 +72,6 @@ export default function Articles() {
               return <ArticleCard key={article.article_id} article={article} />;
             })}
           </ul>
-
         </>
       )}
     </div>
