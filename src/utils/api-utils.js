@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const ncNewsApi = axios.create({
-  baseURL: "https://newsflash-e6p1.onrender.com/api/"
+  baseURL: "https://newsflash-e6p1.onrender.com/api"
 });
 
 export function fetchAllArticles (){
@@ -28,6 +28,14 @@ export function fetchCommentsByArticleId(articleId) {
   })
 }
 
+export function fetchUsers() {
+  return ncNewsApi
+  .get(`/users`)
+  .then((response) => {
+    return response.data.users
+  })
+}
+
 export function updateArticleByArticleId(articleId, body) {
   return ncNewsApi
   .patch(`/articles/${articleId}`, body)
@@ -46,11 +54,12 @@ export function createCommentByArticleId(articleId, body) {
   })
 }
 
-export function fetchUsers() {
+
+export function removeCommentByCommentId(commentId) {
   return ncNewsApi
-  .get(`/users`)
+  .delete(`/comments/${commentId}`)
   .then((response) => {
-    return response.data.users
+    return response
   })
   
 }

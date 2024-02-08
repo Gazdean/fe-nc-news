@@ -26,7 +26,6 @@ export default function IndividualArticleCard({
     setVoted(true)
     updateArticleByArticleId(article_id, {inc_votes: 1})
     .then((response)=> {
-      console.log(response.votes)
       setError(false)
     })
     .catch((err) => {
@@ -44,7 +43,7 @@ export default function IndividualArticleCard({
     setVoted(false)
     updateArticleByArticleId(article_id, {inc_votes: -1})
     .then((response)=> {
-      console.log(response.votes)
+    
       setError(false)
     })
     .catch((err) => {

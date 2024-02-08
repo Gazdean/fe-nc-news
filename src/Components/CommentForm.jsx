@@ -11,6 +11,7 @@ export default function CommentForm({
   setPostedComment,
   postedComment
 }) {
+
   const [newComment, setNewComment] = useState("");
   const { signedIn } = useContext(SignedInContext);
   const [postingComment, setPostingComment] = useState(false);

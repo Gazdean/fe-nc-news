@@ -6,13 +6,10 @@ import { SignedInContext } from "../contexts/SignedinContext";
 export default function NavBar() {
   const { signedIn } = useContext(SignedInContext);
   return (
-    <div >
-      <ul id="nav-bar-container">
-        <Link to="/"><li className="nav-detail">NC News</li></Link>
-        <Link to="/topics"><li className="nav-detail">Topics</li></Link>
-        {signedIn.length === 0 ? <Link to="/signin"><li className="nav-detail">Sign in</li></Link> : <img src={signedIn.avatar_url} alt={`${signedIn.username}'s avatar`}/>}
-      </ul>
-      
-    </div>
+    <nav id="nav-bar-container">
+        <Link to="/"><p className="nav-detail">NC News</p></Link>
+        <Link to="/topics"><p className="nav-detail">Topics</p></Link>
+        {signedIn.length === 0 ? <Link to="/signin"><p className="nav-detail">Sign in</p></Link> : <img id="nav_bar_img"src={signedIn.avatar_url} alt={`${signedIn.username}'s avatar`}/>}
+    </nav>
   );
 } 
