@@ -52,4 +52,5 @@ export function fetchUsers() {
   .then((response) => {
     return response.data.users
   })
+  
 }
