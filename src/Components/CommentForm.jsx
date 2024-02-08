@@ -4,7 +4,7 @@ import { SignedInContext } from "../contexts/SignedinContext";
 
 import { createCommentByArticleId } from "../utils/api-utils";
 
-export default function CommentForm({ article_id, comments, setCommentCount, commentCount}) {
+export default function CommentForm({ article_id, setCommentCount, commentCount, setPostedComment}) {
   const [newComment, setNewComment] = useState("");
   const { signedIn } = useContext(SignedInContext);
   const [postingComment, setPostingComment] = useState(false)
@@ -22,7 +22,8 @@ export default function CommentForm({ article_id, comments, setCommentCount, com
         setPostingComment(false)
         setCommentCount(commentCount + 1 )
         setNewComment("")
-        
+        setPostedComment(true)
+        setPostedComment(false)
       })
       .catch((err) => {
         console.log(err);
