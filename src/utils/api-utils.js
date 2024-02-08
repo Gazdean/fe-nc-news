@@ -4,9 +4,10 @@ const ncNewsApi = axios.create({
   baseURL: "https://newsflash-e6p1.onrender.com/api"
 });
 
-export function fetchAllArticles (){
+export function fetchAllArticles (topic){
+
   return ncNewsApi
-  .get("/articles")
+  .get("/articles", {params: {topic:topic}})
   .then((response) => {
     return response.data.articles
   })
@@ -36,10 +37,17 @@ export function fetchUsers() {
   })
 }
 
+export function fetchTopics() {
+  return ncNewsApi
+  .get(`/topics`)
+  .then((response) => {
+    return response.data.topics
+  })
+}
+
 export function updateArticleByArticleId(articleId, body) {
   return ncNewsApi
   .patch(`/articles/${articleId}`, body)
-
   .then((response) => {
     return response.data.article
   })

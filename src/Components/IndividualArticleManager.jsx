@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import IndividualArticle from "./IndividualArticle";
 import Comments from "./Comments";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function IndividualArticleManager() {
     const { article_id } = useParams();

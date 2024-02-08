@@ -7,7 +7,6 @@ import NavBar from "./Components/NavBar";
 import { Routes, Route } from "react-router";
 import IndividualArticleManager from "./Components/IndividualArticleManager";
 import SignIn from "./Components/SignIn";
-import Topics from "./Components/Topics";
 
 function App() {
   
@@ -19,8 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Articles/>} /> 
         <Route path="/signin" element={<SignIn/>} /> 
-        <Route path="/article/:article_id" element={<IndividualArticleManager />} />
-        <Route path="/topics" element={<Topics />} />
+        <Route path="/article/:article_id" element={<IndividualArticleManager />} />  
       </Routes>
      <Footer/>
     </>
