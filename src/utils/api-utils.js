@@ -54,7 +54,6 @@ export function createCommentByArticleId(articleId, body) {
   })
 }
 
-
 export function removeCommentByCommentId(commentId) {
   return ncNewsApi
   .delete(`/comments/${commentId}`)
