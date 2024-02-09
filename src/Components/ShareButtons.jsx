@@ -14,16 +14,16 @@ export default function ShareButtons() {
     <div id="socials">
         <p>Share</p>
       <EmailShareButton url={`${window.location.href}`}>
-        <EmailIcon size={32} round />
+        <EmailIcon size={20} round />
       </EmailShareButton>
       <FacebookShareButton url={`${window.location.href}`}>
-        <FacebookIcon size={32} round />
+        <FacebookIcon size={20} round />
       </FacebookShareButton>
       <TwitterShareButton url={`${window.location.href}`}>
-        <TwitterIcon size={32} round />
+        <TwitterIcon size={20} round />
       </TwitterShareButton>
       <WhatsappShareButton url={`${window.location.href}`}>
-        <WhatsappIcon size={32} round />
+        <WhatsappIcon size={20} round />
       </WhatsappShareButton>
     </div>
   );
