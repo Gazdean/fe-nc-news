@@ -120,6 +120,19 @@ footer {
   bottom: 0;
 }
 
+#topic-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 1rem; 
+width: 100%;
+}
+
+
+#filter-button {
+  margin-left: 1rem
+}
+
 @media (min-width: 33rem) {
   .article_image {
     width: 14rem;
