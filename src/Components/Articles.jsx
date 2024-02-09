@@ -17,8 +17,6 @@ export default function Articles() {
   const sortBySearchParam = searchParams.get("sort_by");
   const orderSearchParam = searchParams.get("order");
 
-
-
   useEffect(() => {
     
     const paramObject ={}
@@ -118,44 +116,3 @@ export default function Articles() {
     </div>
   );
 }
-
-
- // const [selectedTopicRoute, setSelectedTopicRoute] = useState("");
-  // const [selectedSortByRoute, setSelectedSortByRoute] = useState("");
-  // const [selectedOrderRoute, setSelectedOrderRoute] = useState("");
-
-
-  // function handleSelectTopic(event) {
-  //   const selectedTopic = event.target.value
-  //   setSelectedTopicRoute(selectedTopic);
-  // }
-  // function handleSelectSortBy(event) {
-  //   const selectedSortBy = event.target.value
-  //   setSelectedSortByRoute(selectedSortBy);
-  // }
-  // function handleSelectOrder(event) {
-  //   const selectedOrder = event.target.value
-  //   setSelectedOrderRoute(selectedOrder);
-  // }
-
-  
-  // useEffect(() => {
-  //   let routeString = `?${selectedTopicRoute}&${selectedSortByRoute}&${selectedOrderRoute}`;
-
-  //   console.log(routeString, "route string");
-  //   setRoute(routeString);
-  // }, [selectedTopicRoute, selectedSortByRoute, selectedOrderRoute]);
-  
-  
-  // useEffect(() => {
-  //   navigate(route);
-  // }, [route]);
-
-// function handleParamUpdate(event) {
-    
-  //   const queryArray = event.target.value.split("=")
-    
-  //   queryParams.set(queryArray[0], queryArray[1])
-  //   const newSearch = `?${queryParams.toString()}`;
-  //   navigate({ search: newSearch });
-  // }
