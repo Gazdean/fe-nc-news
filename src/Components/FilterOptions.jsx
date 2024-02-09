@@ -26,7 +26,7 @@ export default function FilterOptions({filter, searchParams, setSearchParams}) {
                 onChange={handleSelectSortBy}
                 id="sort-by"
               >
-                <option value="date">date</option>
+                <option value="date">Date</option>
                 <option value="comment_count">Comment count</option>
                 <option value="votes">Votes</option>
               </select>
