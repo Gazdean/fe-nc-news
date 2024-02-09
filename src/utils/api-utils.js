@@ -4,10 +4,9 @@ const ncNewsApi = axios.create({
   baseURL: "https://newsflash-e6p1.onrender.com/api"
 });
 
-export function fetchAllArticles (topic){
-
-  return ncNewsApi
-  .get("/articles", {params: {topic:topic}})
+export function fetchAllArticles (queryObject){
+   return ncNewsApi
+  .get("/articles", {params: queryObject})
   .then((response) => {
     return response.data.articles
   })
