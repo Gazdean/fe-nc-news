@@ -15,7 +15,7 @@ function App() {
      <NavBar />
       <Header />
       <AppIntroduction />
-      <Routes>
+      <Routes >
         <Route path="/" element={<Articles/>} /> 
         <Route path="/signin" element={<SignIn/>} /> 
         <Route path="/article/:article_id" element={<IndividualArticleManager />} />  

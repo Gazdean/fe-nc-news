@@ -9,7 +9,7 @@ import { SignedInProvider } from "./contexts/SignedinContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   <SignedInProvider>
-    <BrowserRouter>
+    <BrowserRouter >
       <App />
     </BrowserRouter>
   </SignedInProvider>
