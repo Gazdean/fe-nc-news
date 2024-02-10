@@ -72,13 +72,11 @@ export default function Articles() {
       ) : (
         <>
           <div id="topic-container">
-            <label htmlFor="topics">Pick a topic: </label>
-            <select
-             
-              onChange={handleSelectTopic}
-              id="topics"
-            >
-              <option  className="drop-down" value="">All topics</option>
+            <label idhtmlFor="topics">Pick a topic:</label>
+            <select onChange={handleSelectTopic} id="select-topics">
+              <option className="drop-down" value="">
+                All topics
+              </option>
               {topics.map((topic) => {
                 return <TopicOptions key={topic.slug} topic={topic} />;
               })}
@@ -87,8 +85,12 @@ export default function Articles() {
               {filter ? "Close Filter" : "Open filter"}
             </button>
           </div>
-          <FilterOptions filter={filter}searchParams= {searchParams}setSearchParams={setSearchParams}/> 
-          <ul className="article_container">
+          <FilterOptions
+            filter={filter}
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
+          <ul className="article-container">
             {allArticles.map((article) => {
               return <ArticleCard key={article.article_id} article={article} />;
             })}

@@ -22,9 +22,10 @@ export default function FilterOptions({filter, searchParams, setSearchParams}) {
             <div id="filter-container">
               <label htmlFor="sort-by">Sort by: {}</label>
               <select
+                id="select-sort-by"
                 className="drop-down"
                 onChange={handleSelectSortBy}
-                id="sort-by"
+                
               >
                 <option value="date">Date</option>
                 <option value="comment_count">Comment count</option>
@@ -33,9 +34,10 @@ export default function FilterOptions({filter, searchParams, setSearchParams}) {
 
               <label htmlFor="order">order: {}</label>
               <select
+                id="select-order"
                 className="drop-down"
                 onChange={handleSelectOrder}
-                id="order"
+               
               >
                 <option className="option" value="desc">Descending</option>
                 <option className="option" value="asc">Ascending</option>

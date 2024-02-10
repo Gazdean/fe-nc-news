@@ -12,18 +12,18 @@ import {
 export default function ShareButtons() {
   return (
     <div id="socials">
-        <p>Share</p>
+        <p id="share">Share</p>
       <EmailShareButton url={`${window.location.href}`}>
-        <EmailIcon size={32} round />
+        <EmailIcon className="share-icons" round />
       </EmailShareButton>
       <FacebookShareButton url={`${window.location.href}`}>
-        <FacebookIcon size={32} round />
+        <FacebookIcon className="share-icons" round />
       </FacebookShareButton>
       <TwitterShareButton url={`${window.location.href}`}>
-        <TwitterIcon size={32} round />
+        <TwitterIcon className="share-icons" round />
       </TwitterShareButton>
       <WhatsappShareButton url={`${window.location.href}`}>
-        <WhatsappIcon size={32} round />
+        <WhatsappIcon className="share-icons" round />
       </WhatsappShareButton>
     </div>
   );
