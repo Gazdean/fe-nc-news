@@ -40,11 +40,12 @@ height: 2.5rem;
 /* Main Title */
 #header {
   font-size: 1.5rem;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 6rem;
+  margin-bottom: 0.5rem
 }
 #NC {
   color: red;
@@ -54,16 +55,49 @@ height: 2.5rem;
 #News {
   color: black;
   text-shadow: 3px 3px 4px grey;
+  
 }
 
 /* Introduction */
+#intro-container{
+  margin-bottom: 2rem
+};
+p{
+  margin:0
+}
 .intro-details {
-  height: 0.6rem;
+  padding-top:0.2rem;
+  margin: 0;
 }
 
 /* Share */
+#socials {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+#share{
+  margin-bottom:0.2rem;
+  position:absolute;
+  right:1.2rem;
+  top: 13rem
+}
+#all-icons-container {
+ position:absolute;
+  right:1rem;
+  top: 5.9rem
+}
+
+.icon-container {
+  display: block;
+  height: 2rem;
+ 
+}
+
 .share-icons {
-  width: 1.5rem;
+  height:1.2rem;
+  width: 1.2rem;
   padding: 0.1rem;
 }
 
@@ -132,11 +166,11 @@ footer {
 
 
 
-#socials {
+/* #socials {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
+} */
 
 #individual-article-image {
   width: 18rem;
