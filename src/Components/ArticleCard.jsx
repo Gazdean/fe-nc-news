@@ -4,18 +4,18 @@ export default function ArticleCard({ article }) {
 
   return (
     <>
-          <li className="article_card">
-            <h3 id="article_title">{article.title}</h3>
-
-            <div className="article_details">
+          <li className="article-card">
+            <h3 id="article-title">{article.title}</h3>
+            <div className="article-contents">
               <Link to={`/article/${article.article_id}`}>
                 <img
-                  className="article_image"
+                  id="article-image"
+                  className="article-image-style"
                   src={article.article_img_url}
                   alt={`representing the topic of ${article.topic}`}
                 />
               </Link>
-              <div className="list_details">
+              <div className="article-list-details">
                 <p>Author: {article.author}</p>
                   <p>Topic: {article.topic}</p>               
                 <p>Comments: {article.comment_count}</p>

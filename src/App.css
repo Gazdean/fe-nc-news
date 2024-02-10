@@ -1,75 +1,141 @@
+/* happy with these start*/
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0 ;
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
   list-style: none;
 }
 
+/* Nav Bar */
 #nav-bar-container {
-  color: black;
-  font-size: 0.8rem;
-  padding-left: 0;
-  margin-left: 0;
-  padding-top: 1rem ;
-  margin: 0;
-  width: 100%;
-  height: 4rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: white;
-  
-  position: fixed;
-  top: 0;
- 
+color: black;
+font-size: 1rem;
+margin-left: -0.5rem;
+border-bottom: 1px solid grey;
+width: 100%;
+height: 3.5rem;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+background-color: white;
+position: fixed;
+top: 0;
 }
-
-#nav_bar_img {
-  height: 3rem;
+#nav-bar-img {
+margin-top: 0.5rem;
+height: 2.5rem;
 }
-
+#sign-in {
+  padding-left: 5.5rem;
+}
 .nav-detail {
   color: black;
 }
 
+/* Main Title */
 #header {
-  padding-top: 3rem;
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 6rem;
 }
 #NC {
-  color: #fa2a55;
+  color: red;
   padding-right: 1rem;
-  text-shadow: 1px 4px 4px black;
+  text-shadow: 3px 3px 4px grey;
 }
 #News {
   color: black;
-  text-shadow: 1px 3px 3px red;
+  text-shadow: 3px 3px 4px grey;
 }
+
+/* Introduction */
+.intro-details {
+  height: 0.6rem;
+}
+
+/* Share */
+.share-icons {
+  width: 1.5rem;
+  padding: 0.1rem;
+}
+
+/* Drop Down Menus */
+#select-topics {
+  padding-left: 0.3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+}
+#filter-button {
+  margin-left: 1rem;
+}
+#select-sort-by {
+margin-right: 1rem;
+}
+
+/* Article List */
+.article-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.article-card {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-bottom: 2px solid grey;
+  padding-bottom: 16px;
+}
+#article-title {
+  font-size: 1rem;
+}
+.article-contents {
+  display: flex;
+  flex-direction: row;
+}
+.article-image-style {
+  width: 9.5rem;
+  height:auto;
+  border-radius: 20px;
+  margin-top: 0.8rem;
+  margin-left: 0.7rem;
+}
+#article-image:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 10px grey;
+}
+.article-list-details {
+  margin-left: 3rem;
+  font-size: 0.8rem;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid grey;
+  margin-left: -0.5rem;
+}
+
+/* happy with these end */
+
+
 
 #socials {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-.article_container {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.article_card {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  border-bottom: 2px solid grey;
-  padding-bottom: 20px;
 }
 
 #individual-article-image {
@@ -89,28 +155,10 @@ ul {
   border-radius: 10px;
 }
 
-.article_image {
-  width: 7rem;
-  height: 8rem;
-  padding-right: 4rem;
-  border-radius: 20px
-}
-
-.article_details {
-  display: flex;
-  flex-direction: row;
-  font-size: 0.7rem;
-  justify-content: center;
-}
-
 #signin_img {
   width: 4rem;
   height: auto;
   padding-right: 3rem;
-}
-
-#profile-image {
-  height: 10rem;
 }
 
 #signin_container {
@@ -118,42 +166,35 @@ ul {
   flex-direction: row;
 }
 
-footer {
-  width: 100%;
-  background-color: white;
-  position:fixed;
-  bottom: 0;
-}
-
 #topic-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 1rem; 
-width: 100%;
-}
-.drop-down {
-  width:200px;
+  padding-bottom: 1rem;
+  width: 100%;
 }
 
-#filter-container {
-  font:6rem
-}
 
-select:active{
-  position: 4rem;
-  font-size:3.5rem
-}
-#filter-button {
-  margin-left: 1rem
-}
 
-@media (min-width: 33rem) {
-  .article_image {
+/* Media query Larger Screens */
+
+@media (min-width: 1240px) {
+  .article-container {
+    display: grid;
+    grid-template-columns: 50%, 50%;
+    grid-template-rows: auto;
+  }
+
+  #article-image {
     width: 14rem;
     height: 15rem;
-    padding-right: 4rem;
   }
+
+  .article-list-details {
+    margin-left: 4rem;
+    font-size: 1.2rem;
+  }
+
   .article_details {
     font-size: 1.2rem;
   }
