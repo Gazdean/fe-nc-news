@@ -18,7 +18,7 @@ export default function FilterOptions({filter, searchParams, setSearchParams}) {
     return (
         <>
        
-          {filter ? (
+          {!filter ? (
             <div id="filter-container">
               <label htmlFor="sort-by">Sort by: {}</label>
               <select
