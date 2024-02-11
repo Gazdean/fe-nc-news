@@ -23,7 +23,7 @@ export default function SignInCard({ user }) {
       </li>
       <li id="">
         <p id="signin-username" >{user.name}</p>
-        {user.username === signedIn.username ? <button className="signin-button" onClick={handleSignOut} className="signin-button">Sign out</button>
+        {user.username === signedIn.username ? <button className="signin-button" onClick={handleSignOut}>Sign out</button>
          : <button onClick={handleSignIn} className="signin-button">Sign in</button>}
       </li>
     </div>
