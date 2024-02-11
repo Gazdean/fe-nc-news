@@ -19,11 +19,9 @@ export default function IndividualArticle({ article_id , setShowComments, showCo
       });
   }, []);
 
-  
-
   return (
     <>
-      <ShareButtons/>
+      <ShareButtons id="share-buttons-indivdual-article"/>
       {isLoading ? (
         <p>...your article is loading</p>
       ) : (

@@ -13,18 +13,18 @@ export default function SignInCard({ user }) {
   }
 
   return (
-    <div id="signin_container">
+    <div id="signin-card">
       <li>
         <img
-          id="signin_img"
+          id="signin-img"
           src={user.avatar_url}
           alt={`${user.username}'s avatar'`}
         />
       </li>
-      <li>
-        <p>{user.name}</p>
-        {user.username === signedIn.username ? <button onClick={handleSignOut}>Sign out</button>
-         : <button onClick={handleSignIn}>Sign in</button>}
+      <li id="">
+        <p id="signin-username" >{user.name}</p>
+        {user.username === signedIn.username ? <button className="signin-button" onClick={handleSignOut} className="signin-button">Sign out</button>
+         : <button onClick={handleSignIn} className="signin-button">Sign in</button>}
       </li>
     </div>
   );

@@ -5,7 +5,6 @@ const ncNewsApi = axios.create({
 });
 
 export function fetchAllArticles (queryObject){
-  console.log(queryObject)
    return ncNewsApi
   .get("/articles", {params: queryObject})
   .then((response) => {

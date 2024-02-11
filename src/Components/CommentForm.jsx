@@ -42,19 +42,20 @@ export default function CommentForm({
   return (
     <>
       {error === "ERR_NETWORK" ? <h2>503 Service Unavailable</h2>: signedIn.length === 0 ? null : (
-        <form onSubmit={handleCommentSubmit}>
-          <label htmlFor="comment-input">Write a comment</label>
+        <form id="comment-form" onSubmit={handleCommentSubmit}>
+          <label htmlFor="comment-input"></label>
           <textarea
             onChange={handleCommentInput}
             id="comment-input"
             type="text"
             value={newComment}
+            placeholder="write a comment..."
             required
           />
           {postingComment ? (
             <p>..posting comment</p>
           ) : (
-            <button className="button">submit comment</button>
+            <button id= "submit-comment-button" className="button">submit comment</button>
           )}
         </form>
       )}

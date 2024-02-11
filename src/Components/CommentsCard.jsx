@@ -23,7 +23,7 @@ export default function CommentsCard({ comment }) {
 
   return (
     <>
-      <li className="comment_container">
+      <li className="comment-card">
         <p className="comment_details">{comment.body}</p>
         <p className="comment_details">Comment by {comment.author}</p>
         <p className="comment_details">Votes: {comment.votes}</p>
