@@ -13,12 +13,13 @@ export default function IndividualArticleCard({
   const [voted, setVoted] = useState(false)
 
   function handleShowComments() {
-    setShowComments(true);
+    if (!showComments)setShowComments(true);
+    else setShowComments(false)
   }
 
-  function handleHideComments() {
-    setShowComments(false);
-  }
+  // function handleHideComments() {
+  //   setShowComments(false);
+  // }
 
   function handleAddVote() {
     const updatedVotes = existingVotes + 1;
@@ -55,29 +56,31 @@ export default function IndividualArticleCard({
   }
 
   return (
-    <section>
-      <h2>{article.title}</h2>
-      <img
-        id="individual-article-image"
-        src={article.article_img_url}
-        alt={article.title}
-      />
+    <section id="individual-article-container">
+      <h2 id="individual-article-title">{article.title}</h2>
       <ul className="individual-article-details">
         <li>Author: {article.author}</li>
         <li>Topic: {article.topic}</li>
       </ul>
-      <p>{article.body}</p>
-      <ul className="individual-article-details">
+      <img
+        id="individual-article-image"
+        className="article-image-style"
+        src={article.article_img_url}
+        alt={article.title}
+      />
+      
+      <p id="individual-article-body">{article.body}</p>
+      <ul id="votes-comments-headers" className="individual-article-details">
         <li>Votes: {existingVotes}</li>
         <li>Comments: {commentCount}</li>
       </ul>
+      <div id="vote-comment-buttons">
       {error? <p>vote was unsuccessful</p> 
-      : voted ? <button onClick={handleDeleteVote} disabled={!voted}>Remove Vote</button>
-      : <button onClick={handleAddVote} disabled={voted}>Vote</button>}
-      
-      {showComments ? (<button onClick={handleHideComments}>hide comments</button>)
-      : (<button onClick={handleShowComments}>show comments</button>)}
-    </section>
-  );
-  
+      : voted ? <button id="remove-vote-button" onClick={handleDeleteVote} disabled={!voted}>Remove Vote</button>
+      : <button id="vote-button" onClick={handleAddVote} disabled={voted}>Vote</button>}
+      <button id="comment-button" onClick={handleShowComments}>{showComments ? "Hide comments" : "show comments"}</button>
+      </div>
+      {showComments ? null : <div className="bottom-spacer"></div>}
+    </section> 
+  )
 }

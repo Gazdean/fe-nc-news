@@ -6,6 +6,7 @@ import TopicOptions from "./TopicOptions";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import ShareButtons from "./ShareButtons";
 import FilterOptions from "./FilterOptions";
+import AppIntroduction from "./AppIntroduction";
 
 export default function Articles() {
   const [allArticles, setAllArticles] = useState([]);
@@ -65,38 +66,44 @@ export default function Articles() {
   }
 
   return (
-    <div>
-      <ShareButtons />
-      {isLoading ? (
-        <p>...your articles are loading</p>
-      ) : (
-        <>
-          <div id="topic-container">
-            <label idhtmlFor="topics">Pick a topic:</label>
-            <select onChange={handleSelectTopic} id="select-topics">
-              <option className="drop-down" value="">
-                All topics
-              </option>
-              {topics.map((topic) => {
-                return <TopicOptions key={topic.slug} topic={topic} />;
+    <>
+      <AppIntroduction />
+      <div>
+        <ShareButtons />
+        {isLoading ? (
+          <p>...your articles are loading</p>
+        ) : (
+          <>
+            <div id="topic-container">
+              <label htmlFor="select-topics">Pick a topic:</label>
+              <select onChange={handleSelectTopic} id="select-topics">
+                <option className="drop-down" value="">
+                  All topics
+                </option>
+                {topics.map((topic) => {
+                  return <TopicOptions key={topic.slug} topic={topic} />;
+                })}
+              </select>
+              <button id="filter-button" onClick={handleFilter}>
+                {filter ? "Open Filter" : "Close filter"}
+              </button>
+            </div>
+            <FilterOptions
+              filter={filter}
+              searchParams={searchParams}
+              setSearchParams={setSearchParams}
+            />
+            <ul className="article-container">
+              {allArticles.map((article) => {
+                return (
+                  <ArticleCard key={article.article_id} article={article} />
+                );
               })}
-            </select>
-            <button id="filter-button" onClick={handleFilter}>
-              {filter ? "Close Filter" : "Open filter"}
-            </button>
-          </div>
-          <FilterOptions
-            filter={filter}
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-          />
-          <ul className="article-container">
-            {allArticles.map((article) => {
-              return <ArticleCard key={article.article_id} article={article} />;
-            })}
-          </ul>
-        </>
-      )}
-    </div>
+            </ul>
+          </>
+        )}
+      </div>
+      <div className="bottom-spacer"></div>
+    </>
   );
 }

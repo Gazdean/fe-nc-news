@@ -9,22 +9,21 @@ import IndividualArticleManager from "./Components/IndividualArticleManager";
 import SignIn from "./Components/SignIn";
 
 function App() {
-  
   return (
-    <>
-     <NavBar />
+    <main>
+      <NavBar />
       <Header />
-      <AppIntroduction />
-      <Routes >
-        <Route path="/" element={<Articles/>} /> 
-        <Route path="/signin" element={<SignIn/>} /> 
-        <Route path="/article/:article_id" element={<IndividualArticleManager />} />  
+      <Routes>
+        <Route path="/" element={<Articles />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route
+          path="/article/:article_id"
+          element={<IndividualArticleManager />}
+        />
       </Routes>
-     <Footer/>
-    </>
-  )
+      <Footer />
+    </main>
+  );
 }
 
-export default App
-
-
+export default App;
