@@ -72,7 +72,7 @@ export default function Articles() {
       ) : (
         <>
           <div id="topic-container">
-            <label idhtmlFor="topics">Pick a topic:</label>
+            <label htmlFor="topics">Pick a topic:</label>
             <select onChange={handleSelectTopic} id="select-topics">
               <option className="drop-down" value="">
                 All topics
