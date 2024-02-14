@@ -3,9 +3,9 @@ import { SignedInContext } from "../contexts/SignedinContext";
 import { useState } from "react";
 import { removeCommentByCommentId } from "../utils/api-utils";
 
-export default function CommentsCard({ comment, setComments }) {
+export default function CommentsCard({ comment, setComments, setIsDeleting, isDeleting }) {
   const { signedIn, setSignedIn } = useContext(SignedInContext);
-  const [isDeleting, setIsDeleting] = useState(false)
+  // const [isDeleting, setIsDeleting] = useState(false)
 
   function handleDeleteOnclick(){
    
