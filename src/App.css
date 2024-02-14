@@ -34,6 +34,7 @@ ul {
 #sign-in {
 }
 .nav-detail {
+  padding-top: 1rem;
   color: black;
 }
 
@@ -80,7 +81,7 @@ p {
   margin-bottom: 0.2rem;
   position: absolute;
   right: 1rem;
-  top: 11rem;
+  top: 12rem;
 }
 #all-icons-container {
   position: absolute;
@@ -282,12 +283,14 @@ p {
 
 /* Footer */
 footer {
+  height: 2.5rem;
   width: 100%;
   background-color: white;
   position: fixed;
   bottom: 0;
   border-top: 1px solid grey;
   margin-left: -0.5rem;
+  padding-top: 1rem
 }
 
 /* Media query Larger Screens */
