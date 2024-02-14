@@ -6,6 +6,7 @@ import CommentForm from "./CommentForm";
 export default function Comments({article_id, showComments, setCommentCount, commentCount, postedComment, setPostedComment}) {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState([]);
+    const [isDeleting, setIsDeleting] = useState(false)
     
     useEffect(() => {
         fetchCommentsByArticleId(article_id)
@@ -17,10 +18,7 @@ export default function Comments({article_id, showComments, setCommentCount, com
             setError(error.code)
             console.log(error);
           });
-      }, [postedComment]);
-
-
-
+      }, [postedComment,isDeleting]);
 
     return (
         <>
@@ -32,7 +30,7 @@ export default function Comments({article_id, showComments, setCommentCount, com
         <ul id="comments-container">
           <CommentForm article_id={article_id} comments={comments} setCommentCount={setCommentCount} commentCount={commentCount} setPostedComment={setPostedComment} postedComment={postedComment}/>
           {comments.map((comment) => {
-            return <CommentsCard key={comment.comment_id} comment={comment} />;
+            return <CommentsCard key={comment.comment_id} comment={comment} setComments={setComments} setIsDeleting={setIsDeleting} isDeleting={isDeleting}/>;
           })}
           
         </ul>
