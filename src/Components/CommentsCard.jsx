@@ -3,7 +3,7 @@ import { SignedInContext } from "../contexts/SignedinContext";
 import { useState } from "react";
 import { removeCommentByCommentId } from "../utils/api-utils";
 
-export default function CommentsCard({ comment }) {
+export default function CommentsCard({ comment, setComments }) {
   const { signedIn, setSignedIn } = useContext(SignedInContext);
   const [isDeleting, setIsDeleting] = useState(false)
 
@@ -32,3 +32,5 @@ export default function CommentsCard({ comment }) {
     </>
   );
 }
+
+

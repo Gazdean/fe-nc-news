@@ -19,9 +19,6 @@ export default function Comments({article_id, showComments, setCommentCount, com
           });
       }, [postedComment]);
 
-
-
-
     return (
         <>
         {showComments ? 
@@ -32,7 +29,7 @@ export default function Comments({article_id, showComments, setCommentCount, com
         <ul id="comments-container">
           <CommentForm article_id={article_id} comments={comments} setCommentCount={setCommentCount} commentCount={commentCount} setPostedComment={setPostedComment} postedComment={postedComment}/>
           {comments.map((comment) => {
-            return <CommentsCard key={comment.comment_id} comment={comment} />;
+            return <CommentsCard key={comment.comment_id} comment={comment} setComments={setComments}/>;
           })}
           
         </ul>
