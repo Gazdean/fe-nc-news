@@ -24,9 +24,11 @@ export default function CommentsCard({ comment, setComments, setIsDeleting, isDe
   return (
     <>
       <li className="comment-card">
-        <p className="comment_details">{comment.body}</p>
-        <p className="comment_details">{comment.author}</p>
-        <p className="comment_details">Votes: {comment.votes}</p>
+        <p className="comment-content">{comment.body}</p>
+        <div id="comment-details">
+          <p className="comment-content">{comment.author}</p>
+          <p className="comment-content">Votes: {comment.votes}</p>
+        </div>
       </li>
       {comment.author !== signedIn.username ?  null : isDeleting ? <p>Deleting your message</p> : <button onClick= {handleDeleteOnclick}>delete</button> }
     </>
