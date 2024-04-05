@@ -22,6 +22,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   background-color: white;
   position: fixed;
   top: 0;
@@ -34,7 +35,6 @@ ul {
 #sign-in {
 }
 .nav-detail {
-  padding-top: 1rem;
   color: black;
 }
 
